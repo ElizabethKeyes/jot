@@ -7,7 +7,7 @@ export class Note {
     this.name = data.name
     this.color = data.color
     this.creationDate = data.creationDate ? new Date(data.date) : new Date()
-    this.savedDate = data.savedDate ? data.savedDate : new Date()
+    this.savedDate = data.savedDate ? new Date(data.savedDate) : new Date()
   }
 
   get ComputeDate() {
@@ -17,7 +17,7 @@ export class Note {
 
   get ListTemplate() {
     return `
-    <div class="row selectable">
+    <div class="row selectable" onclick="app.notesController.setActive('${this.id}')">
       <div class="col-2">
       <p style="color: ${this.color}"><i class="mdi mdi-circle"></i></p>
       </div>
@@ -33,10 +33,10 @@ export class Note {
 
   get ActiveTemplate() {
     return `
-    <!-- <div class="card text-dark my-active-jot">
+    <div class="card text-dark my-active-jot">
       <div class="row">
         <div class="col-8">
-          <h1>🔷 Note Title</h1>
+          <h1><span style="color: ${this.color}"><i class="mdi mdi-circle"></i></span> ${this.name}</h1>
         </div>
         <div class="col 4 text-end">
           <button class="btn btn-outline-danger m-2" title="Delete this note"><i
@@ -45,11 +45,11 @@ export class Note {
       </div>
       <textarea name="active-jot" id="active-jot" cols="30" rows="20" class="m-2"></textarea>
       <div class="d-flex justify-content-between">
-        <p>Date created: <span>3/8/2023</span></p>
-        <p>Date modified: <span>3/10/2023</span></p>
+        <p>Date created: ${this.ComputeDate}</p>
+        <p>Date modified: ${this.ComputeDate}</p>
       </div>
     </div>
-  </div> -->
+  </div>
     `
   }
 

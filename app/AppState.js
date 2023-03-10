@@ -15,7 +15,11 @@ class AppState extends EventEmitter {
       color: '#7670b4'
     })
   ]
+
+  /** @type {import('./Models/Note').Note|null} */
+  activeNote = null
 }
+
 
 export const appState = new Proxy(new AppState(), {
   get(target, prop) {
