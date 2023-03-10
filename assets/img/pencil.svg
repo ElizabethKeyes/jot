@@ -1,0 +1,23 @@
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 20 20">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-607.63544,-694.58531)">
+  <g transform="matrix(0.81819669,0,0,0.81819669,498.63968,675.93757)" stroke-dasharray="none" stroke-miterlimit="4" stroke-width="1.22220004">
+   <path stroke-linejoin="bevel" style="enable-background:accumulate;color:#000000;" d="m127.22,15.83-7.1278,1.9099-5.2179-5.2179,1.9099-7.1278,7.1278-1.9099,5.2179,5.2179z" fill-rule="nonzero" transform="matrix(0.40551809,0.52006917,-0.33776041,0.08975004,107.01225,-36.852073)" stroke="#333" stroke-linecap="square" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="2.65411043" fill="#FFF"/>
+   <path stroke-linejoin="bevel" style="enable-background:accumulate;color:#000000;" d="m127.22,15.83-3.2752,4.5991c1.4588-5.9425-0.29557-16.54-5.5134-20.576l5.4806,3.6313,5.2179,5.2179z" fill-rule="nonzero" transform="matrix(-0.7801045,0.60827785,-0.13462519,-0.50664121,236.34134,-28.123362)" stroke="#333" stroke-linecap="square" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="1.76940513" fill="#FFF"/>
+   <path stroke-linejoin="bevel" d="m149.37,24.013-12.463,12.905,0.35355,3.182,12.463-12.905-0.35355-3.182" stroke="#333" stroke-linecap="square" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="1.22220004" fill="#999"/>
+   <path stroke-linejoin="bevel" d="m149.72,27.195,3.5355,3.5355-12.463,12.905-3.5355-3.5355z" stroke="#333" stroke-linecap="square" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="1.22220004" fill="#999"/>
+   <path stroke-linejoin="bevel" d="m156.44,31.084-12.463,12.905-3.182-0.35355,12.463-12.905,3.182,0.35355" stroke="#333" stroke-linecap="square" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="1.22220004" fill="#999"/>
+   <path stroke-linejoin="bevel" style="enable-background:accumulate;color:#000000;" d="m134.55,44.964,0.43157-0.95045,1.5764,1.5549-1.0621,0.3285-1.0641,0.11662z" fill-rule="nonzero" stroke="#333" stroke-linecap="square" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="1.22220004" fill="#999"/>
+   <path style="enable-background:accumulate;color:#000000;" d="m153.04,28.767-1.3535-1.3535-0.13559-1.2181,1.2182,0.13537,1.3534,1.3535,0.13559,1.2181z" fill-rule="nonzero" fill="#333"/>
+  </g>
+ </g>
+</svg>

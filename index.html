@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link rel="icon" href="assets\img\pencil.svg">
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.1.96/css/materialdesignicons.min.css"
     integrity="sha512-NaaXI5f4rdmlThv3ZAVS44U9yNWJaUYWzPhvlg5SC7nMRvQYV9suauRK3gVbxh7qjE33ApTPD+hkOW78VSHyeg=="
@@ -15,28 +15,65 @@
   <title>jot</title>
 </head>
 
-<body>
+<body class="bg-dark text-light">
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
+    <nav class="navbar navbar-dark navbar-expand no-select mb-3">
       <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
+        <img class="pencil-logo" src="assets\img\pencil.svg" height="45" alt="" loading="lazy">
         <span class="ms-2">jot</span>
       </a>
     </nav>
   </header>
   <main>
     <div class="container-fluid">
+
       <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+        <!-- form and list in this column -->
+        <div class="col-4">
+          <div class="card text-dark my-entries">
+            <h1 class="text-center">My Jots</h1>
+            <!-- jot entries template -->
+            <div class="row selectable">
+              <div class="col-2">
+                🔷
+              </div>
+              <div class="col-6">
+                <p>Test Entry</p>
+              </div>
+              <div class="col-4">
+                <p>Date Edited</p>
+              </div>
+            </div>
+            <!-- end of template -->
+          </div>
+        </div>
+
+        <!-- active notes in this column -->
+        <div class="col-8">
+          <div class="card text-dark my-active-jot">
+            <!-- active notes template -->
+            <div class="row">
+              <div class="col-8">
+                <h1>🔷 Note Title</h1>
+              </div>
+              <div class="col 4 text-end">
+                <button class="btn btn-outline-danger m-2" title="Delete this note"><i
+                    class="mdi mdi-delete"></i></button>
+              </div>
+            </div>
+            <textarea name="active-jot" id="active-jot" cols="30" rows="20" class="m-2"></textarea>
+            <div class="d-flex justify-content-between">
+              <p>Date created: <span>3/8/2023</span></p>
+              <p>Date modified: <span>3/10/2023</span></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </main>
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
-      <p><small>Made with 💖 by CodeWorks</small></p>
+      <p><small>Made with ✏️ by Elizabeth</small></p>
     </div>
   </footer>
 
