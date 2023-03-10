@@ -22,6 +22,15 @@ class NotesService {
     appState.activeNote = null
   }
 
+  saveNote(editedNote) {
+    let activeNote = appState.activeNote
+    activeNote.text = editedNote
+    let matchingNote = appState.notes.find(n => n.id == activeNote.id)
+    matchingNote.text = activeNote.text
+    console.log(matchingNote.text, 'saved');
+    saveState('notes', appState.notes)
+  }
+
   delete() {
     let remainingNotes = appState.notes.filter(n => n.id != appState.activeNote.id)
     appState.notes = remainingNotes

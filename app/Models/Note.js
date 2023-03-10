@@ -8,6 +8,7 @@ export class Note {
     this.color = data.color
     this.creationDate = data.creationDate ? new Date(data.creationDate) : new Date()
     this.savedDate = data.savedDate ? new Date(data.savedDate) : new Date()
+    this.text = data.text ? data.text : ''
   }
 
   get ComputeDate() {
@@ -40,12 +41,12 @@ export class Note {
         </div>
         <div class="col 4 text-end">
         <button onclick="app.notesController.minimize()" class="btn btn-outline-primary m-2"
-                  title="Close this note"><i class="mdi mdi-minus"></i></button>
-          <button onclick="app.notesController.delete()" class="btn btn-outline-danger m-2" title="Delete this note"><i
-              class="mdi mdi-delete"></i></button>
+          title="Close this note"><i class="mdi mdi-minus"></i></button>
+        <button onclick="app.notesController.saveNote()" class="btn btn-outline-primary m-2" title="Save this Jot"><i class="mdi mdi-content-save"></i></button>
+        <button onclick="app.notesController.delete()" class="btn btn-outline-danger m-2" title="Delete this note"><i class="mdi mdi-delete"></i></button>
         </div>
       </div>
-      <textarea name="active-jot" id="active-jot" cols="30" rows="20" class="m-2"></textarea>
+      <textarea name="active-jot" id="active-jot" cols="30" rows="20" class="m-2">${this.text}</textarea>
       <div class="d-flex justify-content-between">
         <p>Date created: ${this.ComputeDate}</p>
         <p>Date modified: ${this.ComputeDate}</p>

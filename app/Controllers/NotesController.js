@@ -42,6 +42,12 @@ export class NotesController {
     notesService.minimize()
   }
 
+  saveNote() {
+    let editedNote = document.getElementById('active-jot')
+    // @ts-ignore
+    notesService.saveNote(editedNote.value)
+  }
+
   delete() {
     notesService.delete()
   }
