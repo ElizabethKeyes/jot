@@ -51,12 +51,12 @@ export class Note {
         </div>
         <div class="col 4 text-end">
         <button onclick="app.notesController.minimize()" class="btn btn-outline-primary m-2"
-          title="Close this note"><i class="mdi mdi-minus"></i></button>
-        <button onclick="app.notesController.saveNote()" class="btn btn-outline-primary m-2" title="Save this Jot"><i class="mdi mdi-content-save"></i></button>
-        <button onclick="app.notesController.delete()" class="btn btn-outline-danger m-2" title="Delete this note"><i class="mdi mdi-delete"></i></button>
+          title="Close this Jot"><i class="mdi mdi-minus"></i></button>
+        <button onclick="app.notesController.saveNote()" class="btn btn-outline-success m-2" title="Save this Jot"><i class="mdi mdi-content-save"></i></button>
+        <button onclick="app.notesController.delete()" class="btn btn-outline-danger m-2" title="Delete this Jot"><i class="mdi mdi-delete"></i></button>
         </div>
       </div>
-      <textarea onblur="app.notesController.saveNote()" name="active-jot" id="active-jot" cols="30" rows="20" class="m-2">${this.text}</textarea>
+      <textarea onblur="app.notesController.saveNote()" name="active-jot" id="active-jot" cols="30" rows="22" class="m-2">${this.text}</textarea>
       <div class="d-flex justify-content-between">
         <p>Date Created: ${this.ComputeDate}</p>
         <p>Last Save: ${this.ComputeSaveDate}</p>
