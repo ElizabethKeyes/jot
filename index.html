@@ -33,8 +33,8 @@
           <div class="card text-dark my-entries">
             <h1 class="text-center">My Jots</h1>
             <div id="notes-list">
-              <!-- jot entries template -->
-              <div class="row selectable">
+              <!-- #region jot entries template -->
+              <!-- <div class="row selectable">
                 <div class="col-2">
                   <p style="color: blue"><i class="mdi mdi-circle"></i></p>
                 </div>
@@ -44,24 +44,26 @@
                 <div class="col-4">
                   <p>Date Edited</p>
                 </div>
-              </div>
-              <!-- end of template -->
+              </div> -->
+              <!-- #endregion end of template -->
             </div>
 
-            <!-- my form -->
-            <form action="" class="my-form">
-              <div class="row justify-content-start">
+            <!-- #region my form -->
+            <form onsubmit="app.notesController.createNote()" class="my-form">
+              <div class="row justify-content-between">
                 <div class="col-7">
-                  <input type="text" name="name" for="name" placeholder="Start a new jot..." class="form-control">
+                  <input type="text" name="name" for="name" placeholder="Start a new jot..." class="form-control"
+                    required>
                 </div>
-                <div class="col-2">
-                  <input type="color" name="color" for="color">
+                <div class="col-2 d-flex">
+                  <input class="align-self-center" type="color" name="color" for="color">
                 </div>
                 <div class="col-2">
                   <button type="submit" class="btn btn-outline-success ms-2"><i class="mdi mdi-check"></i></button>
                 </div>
               </div>
             </form>
+            <!-- #endregion -->
 
           </div>
         </div>
@@ -69,12 +71,15 @@
         <div class="col-8" id="active-note">
           <h1 class="text-center mt-5 pt-5"><i class="mdi mdi-lightbulb"></i>Have an idea? Jot it down!</h1>
           <!-- #region active notes template-->
+
           <!-- <div class="card text-dark my-active-jot">
             <div class="row">
               <div class="col-8">
                 <h1>🔷 Note Title</h1>
               </div>
               <div class="col 4 text-end">
+                <button onclick="app.notesController.minimize()" class="btn btn-outline-primary m-2"
+                  title="Close this note"><i class="mdi mdi-minimize"></i></button>
                 <button class="btn btn-outline-danger m-2" title="Delete this note"><i
                     class="mdi mdi-delete"></i></button>
               </div>
@@ -84,17 +89,17 @@
               <p>Date created: <span>3/8/2023</span></p>
               <p>Date modified: <span>3/10/2023</span></p>
             </div>
-          </div>
-        </div> -->
-
-
-          <!-- end of active notes template -->
-          <!-- #endregion -->
-
+          </div> -->
         </div>
+
+
+        <!-- end of active notes template -->
+        <!-- #endregion -->
       </div>
     </div>
+
     </div>
+
   </main>
   <footer class="bg-dark text-light">
     <div class="text-center no-select">

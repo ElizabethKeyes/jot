@@ -21,4 +21,6 @@
 .my-form {
   position: absolute;
   bottom: 5px;
+  width: 100%;
+  padding-right: .75em;
 }

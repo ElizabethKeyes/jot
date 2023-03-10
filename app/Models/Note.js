@@ -39,7 +39,9 @@ export class Note {
           <h1><span style="color: ${this.color}"><i class="mdi mdi-circle"></i></span> ${this.name}</h1>
         </div>
         <div class="col 4 text-end">
-          <button class="btn btn-outline-danger m-2" title="Delete this note"><i
+        <button onclick="app.notesController.minimize()" class="btn btn-outline-primary m-2"
+                  title="Close this note"><i class="mdi mdi-minus"></i></button>
+          <button onclick="app.notesController.delete()" class="btn btn-outline-danger m-2" title="Delete this note"><i
               class="mdi mdi-delete"></i></button>
         </div>
       </div>
