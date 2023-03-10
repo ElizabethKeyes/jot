@@ -6,7 +6,7 @@ export class Note {
     this.id = generateId()
     this.name = data.name
     this.color = data.color
-    this.creationDate = data.creationDate ? new Date(data.date) : new Date()
+    this.creationDate = data.creationDate ? new Date(data.creationDate) : new Date()
     this.savedDate = data.savedDate ? new Date(data.savedDate) : new Date()
   }
 

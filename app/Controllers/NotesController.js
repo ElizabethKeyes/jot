@@ -38,6 +38,10 @@ export class NotesController {
     notesService.createNote(formData)
   }
 
+  minimize() {
+    notesService.minimize()
+  }
+
   delete() {
     notesService.delete()
   }

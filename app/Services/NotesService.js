@@ -1,5 +1,6 @@
 import { appState } from "../AppState.js"
 import { Note } from "../Models/Note.js"
+import { saveState } from "../Utils/Store.js";
 
 
 class NotesService {
@@ -8,6 +9,7 @@ class NotesService {
     let newNote = new Note(formData)
     appState.notes.push(newNote)
     appState.emit('notes')
+    saveState('notes', appState.notes)
   }
 
   setActive(noteId) {
@@ -16,10 +18,15 @@ class NotesService {
     console.log(appState.activeNote)
   }
 
+  minimize() {
+    appState.activeNote = null
+  }
+
   delete() {
     let remainingNotes = appState.notes.filter(n => n.id != appState.activeNote.id)
     appState.notes = remainingNotes
     appState.activeNote = null
+    saveState('notes', appState.notes)
   }
 
 }
