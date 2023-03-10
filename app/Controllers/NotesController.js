@@ -1,6 +1,7 @@
 import { appState } from "../AppState.js";
 import { notesService } from "../Services/NotesService.js";
 import { getFormData } from "../Utils/FormHandler.js";
+import { Pop } from "../Utils/Pop.js";
 import { setHTML, setText } from "../Utils/Writer.js";
 
 
@@ -18,13 +19,21 @@ function _drawActive() {
   }
 }
 
+function _drawNoteCount() {
+  let noteCount = appState.notes.length
+  setText('note-count', noteCount)
+  console.log('draw note count', noteCount);
+}
+
 
 export class NotesController {
   constructor() {
     console.log('hello from NotesController');
     _drawNotes()
-    appState.on(`activeNote`, _drawActive)
-    appState.on(`notes`, _drawNotes)
+    _drawNoteCount()
+    appState.on('activeNote', _drawActive)
+    appState.on('notes', _drawNotes)
+    appState.on('noteCount', _drawNoteCount)
   }
 
   setActive(noteId) {
@@ -36,6 +45,8 @@ export class NotesController {
     let form = window.event.target
     let formData = getFormData(form)
     notesService.createNote(formData)
+    // @ts-ignore
+    form.reset()
   }
 
   minimize() {
@@ -48,8 +59,10 @@ export class NotesController {
     notesService.saveNote(editedNote.value)
   }
 
-  delete() {
-    notesService.delete()
+  async delete() {
+    if (await Pop.confirm("Are you sure you'd like to delete this note?")) {
+      notesService.delete()
+    }
   }
 
 }

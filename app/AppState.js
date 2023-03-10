@@ -21,6 +21,8 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/Note').Note|null} */
   activeNote = null
+
+  noteCount = 0
 }
 
 

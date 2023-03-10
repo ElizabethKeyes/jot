@@ -10,12 +10,12 @@ class NotesService {
     appState.notes.push(newNote)
     appState.emit('notes')
     saveState('notes', appState.notes)
+    appState.emit('noteCount')
   }
 
   setActive(noteId) {
     let selectedNote = appState.notes.find(n => n.id == noteId)
     appState.activeNote = selectedNote
-    console.log(appState.activeNote)
   }
 
   minimize() {
@@ -25,9 +25,10 @@ class NotesService {
   saveNote(editedNote) {
     let activeNote = appState.activeNote
     activeNote.text = editedNote
-    let matchingNote = appState.notes.find(n => n.id == activeNote.id)
-    matchingNote.text = activeNote.text
-    console.log(matchingNote.text, 'saved');
+    let noteInArray = appState.notes.find(n => n.id == activeNote.id)
+    noteInArray.text = activeNote.text
+    noteInArray.savedDate = new Date()
+    appState.emit('activeNote')
     saveState('notes', appState.notes)
   }
 
@@ -36,6 +37,7 @@ class NotesService {
     appState.notes = remainingNotes
     appState.activeNote = null
     saveState('notes', appState.notes)
+    appState.emit('noteCount')
   }
 
 }

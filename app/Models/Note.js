@@ -13,7 +13,17 @@ export class Note {
 
   get ComputeDate() {
     let creationDate = this.creationDate
-    return (creationDate.getMonth() + 1) + '/' + (creationDate.getDate()) + '/' + (creationDate.getFullYear())
+    return (creationDate.getMonth() + 1) + '/' + (creationDate.getDate()) + '/' + (creationDate.getFullYear() + ' ' + creationDate.getHours()) + ':' + (creationDate.getMinutes().toLocaleString('en-US', { minimumIntegerDigits: 2 }))
+  }
+
+  get ComputeSaveDate() {
+    let savedDate = this.savedDate
+    return (savedDate.getMonth() + 1) + '/' + (savedDate.getDate()) + '/' + (savedDate.getFullYear() + ' ' + savedDate.getHours()) + ':' + (savedDate.getMinutes().toLocaleString('en-US', { minimumIntegerDigits: 2 }))
+  }
+
+  get ListDate() {
+    let listDate = this.creationDate
+    return (listDate.getMonth() + 1) + '/' + (listDate.getDate()) + '/' + (listDate.getFullYear())
   }
 
   get ListTemplate() {
@@ -26,7 +36,7 @@ export class Note {
         <p>${this.name}</p>
       </div>
       <div class="col-4">
-        <p>${this.ComputeDate}</p>
+        <p>${this.ListDate}</p>
       </div>
     </div>
     `
@@ -46,10 +56,10 @@ export class Note {
         <button onclick="app.notesController.delete()" class="btn btn-outline-danger m-2" title="Delete this note"><i class="mdi mdi-delete"></i></button>
         </div>
       </div>
-      <textarea name="active-jot" id="active-jot" cols="30" rows="20" class="m-2">${this.text}</textarea>
+      <textarea onblur="app.notesController.saveNote()" name="active-jot" id="active-jot" cols="30" rows="20" class="m-2">${this.text}</textarea>
       <div class="d-flex justify-content-between">
-        <p>Date created: ${this.ComputeDate}</p>
-        <p>Date modified: ${this.ComputeDate}</p>
+        <p>Date Created: ${this.ComputeDate}</p>
+        <p>Last Save: ${this.ComputeSaveDate}</p>
       </div>
     </div>
   </div>
