@@ -7,6 +7,7 @@
   min-height: 80vh;
   margin-left: 1em;
   padding: .5em;
+  position: relative;
 }
 
 .my-active-jot {
@@ -14,4 +15,10 @@
   padding-top: .5em;
   padding-left: .5em;
   padding-right: .5em;
+  margin-right: 1em;
+}
+
+.my-form {
+  position: absolute;
+  bottom: 5px;
 }

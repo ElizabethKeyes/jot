@@ -5,7 +5,16 @@ import { Note } from "./Models/Note.js"
 
 class AppState extends EventEmitter {
   /** @type {import('./Models/Note').Note[]} */
-  notes = []
+  notes = [
+    new Note({
+      name: 'HTML',
+      color: '#1b9dc6',
+    }),
+    new Note({
+      name: 'JavaScript',
+      color: '#7670b4'
+    })
+  ]
 }
 
 export const appState = new Proxy(new AppState(), {

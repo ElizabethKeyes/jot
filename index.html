@@ -29,29 +29,48 @@
 
       <div class="row">
         <!-- form and list in this column -->
-        <div class="col-4">
+        <div class="col-4 d-flex flex-column">
           <div class="card text-dark my-entries">
             <h1 class="text-center">My Jots</h1>
-            <!-- jot entries template -->
-            <div class="row selectable">
-              <div class="col-2">
-                🔷
+            <div id="notes-list">
+              <!-- jot entries template -->
+              <div class="row selectable">
+                <div class="col-2">
+                  <p style="color: blue"><i class="mdi mdi-circle"></i></p>
+                </div>
+                <div class="col-6">
+                  <p>Test Entry</p>
+                </div>
+                <div class="col-4">
+                  <p>Date Edited</p>
+                </div>
               </div>
-              <div class="col-6">
-                <p>Test Entry</p>
-              </div>
-              <div class="col-4">
-                <p>Date Edited</p>
-              </div>
+              <!-- end of template -->
             </div>
-            <!-- end of template -->
+
+            <!-- my form -->
+            <form action="" class="my-form">
+              <div class="row justify-content-start">
+                <div class="col-7">
+                  <input type="text" name="name" for="name" placeholder="Start a new jot..." class="form-control">
+                </div>
+                <div class="col-2">
+                  <input type="color" name="color" for="color">
+                </div>
+                <div class="col-2">
+                  <button type="submit" class="btn btn-outline-success ms-2"><i class="mdi mdi-check"></i></button>
+                </div>
+              </div>
+            </form>
+
           </div>
         </div>
-
         <!-- active notes in this column -->
         <div class="col-8">
-          <div class="card text-dark my-active-jot">
-            <!-- active notes template -->
+          <h1 class="text-center mt-5 pt-5"><i class="mdi mdi-lightbulb"></i>Have an idea? Jot it down!</h1>
+
+          <!-- #region active notes template-->
+          <!-- <div class="card text-dark my-active-jot">
             <div class="row">
               <div class="col-8">
                 <h1>🔷 Note Title</h1>
@@ -67,8 +86,15 @@
               <p>Date modified: <span>3/10/2023</span></p>
             </div>
           </div>
+        </div> -->
+
+
+          <!-- end of active notes template -->
+          <!-- #endregion -->
+
         </div>
       </div>
+    </div>
     </div>
   </main>
   <footer class="bg-dark text-light">
