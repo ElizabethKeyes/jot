@@ -29,6 +29,7 @@ function _drawNoteCount() {
 export class NotesController {
   constructor() {
     console.log('hello from NotesController');
+    _drawActive()
     _drawNotes()
     _drawNoteCount()
     appState.on('activeNote', _drawActive)
@@ -47,6 +48,7 @@ export class NotesController {
     notesService.createNote(formData)
     // @ts-ignore
     form.reset()
+    Pop.toast('New Jot created!', "success", "top", 1500)
   }
 
   minimize() {
@@ -62,6 +64,7 @@ export class NotesController {
   async delete() {
     if (await Pop.confirm("Are you sure you'd like to delete this note?")) {
       notesService.delete()
+      Pop.toast('Jot has been successfully deleted', "success", "top", 1500)
     }
   }
 

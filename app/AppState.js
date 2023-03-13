@@ -20,7 +20,7 @@ class AppState extends EventEmitter {
   // #endregion
 
   /** @type {import('./Models/Note').Note|null} */
-  activeNote = null
+  activeNote = loadState('active-note', Note) || null
 
   noteCount = 0
 }

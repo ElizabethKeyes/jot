@@ -32,8 +32,6 @@
     <div class="container-fluid">
 
       <div class="row">
-        <!-- form and list in this column -->
-
 
         <!-- SECTION Offcanvas Sidebar -->
         <div class="offcanvas offcanvas-end" id="demo">
@@ -42,9 +40,9 @@
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
           </div>
           <div class="offcanvas-body text-dark" id="notes-list">
-            <!-- jot entries go here -->
+            <!-- jot entries populate here -->
           </div>
-          <form onsubmit="app.notesController.createNote()" class="my-form">
+          <form onsubmit="app.notesController.createNote()" class="my-form mb-2">
             <div class="row justify-content-evenly">
               <div class="col-7">
                 <input type="text" name="name" for="name" placeholder="Start a new jot..." minlength="3" maxlength="15"
@@ -60,35 +58,11 @@
           </form>
         </div>
 
-
         <!-- active notes in this column -->
         <div class="col-12" id="active-note">
           <h1 class="text-center mt-5 pt-5"><i class="mdi mdi-lightbulb"></i>Have an idea? Jot it down!</h1>
-          <!-- #region active notes template-->
-
-          <!-- <div class="card text-dark my-active-jot">
-            <div class="row">
-              <div class="col-8">
-                <h1>🔷 Note Title</h1>
-              </div>
-              <div class="col 4 text-end">
-                <button onclick="app.notesController.minimize()" class="btn btn-outline-primary m-2"
-                  title="Close this note"><i class="mdi mdi-minimize"></i></button>
-                <button class="btn btn-outline-danger m-2" title="Delete this note"><i
-                    class="mdi mdi-delete"></i></button>
-              </div>
-            </div>
-            <textarea name="active-jot" id="active-jot" cols="30" rows="20" class="m-2"></textarea>
-            <div class="d-flex justify-content-between">
-              <p>Date created: <span>3/8/2023</span></p>
-              <p>Date modified: <span>3/10/2023</span></p>
-            </div>
-          </div> -->
+          <!-- Active notes template populates here -->
         </div>
-
-
-        <!-- end of active notes template -->
-        <!-- #endregion -->
       </div>
     </div>
 
@@ -110,43 +84,3 @@
 </body>
 
 </html>
-
-
-
-<!-- beginning of offCanvas
- <div class="card text-dark my-entries">
-  <h1 class="text-center">My Jots (<span id="note-count"></span>)</h1>
-  <div id="notes-list">
-    #region jot entries template
-    <div class="row selectable">
-      <div class="col-2">
-        <p style="color: blue"><i class="mdi mdi-circle"></i></p>
-      </div>
-      <div class="col-6">
-        <p>Test Entry</p>
-      </div>
-      <div class="col-4">
-        <p>Date Edited</p>
-      </div>
-    </div>
-    #endregion end of template
-  </div>
-
-  my form
-  <form onsubmit="app.notesController.createNote()" class="my-form">
-    <div class="row justify-content-between">
-      <div class="col-7">
-        <input type="text" name="name" for="name" placeholder="Start a new jot..." minlength="3"
-          maxlength="15" class="form-control" required>
-      </div>
-      <div class="col-2 d-flex">
-        <input class="align-self-center" type="color" name="color" for="color">
-      </div>
-      <div class="col-2">
-        <button type="submit" class="btn btn-outline-success ms-2"><i class="mdi mdi-check"></i></button>
-      </div>
-    </div>
-  </form>
-
-</div>
-end of offCanvas -->

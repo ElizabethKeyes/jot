@@ -16,6 +16,8 @@ class NotesService {
   setActive(noteId) {
     let selectedNote = appState.notes.find(n => n.id == noteId)
     appState.activeNote = selectedNote
+    saveState('active-note', selectedNote)
+    console.log(selectedNote);
   }
 
   minimize() {
