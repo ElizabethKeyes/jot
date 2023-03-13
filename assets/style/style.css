@@ -24,3 +24,8 @@
   width: 100%;
   padding-right: .75em;
 }
+
+.menu-button {
+  position: fixed;
+  right: 25px;
+}

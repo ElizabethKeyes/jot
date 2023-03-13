@@ -44,12 +44,12 @@ export class Note {
 
   get ActiveTemplate() {
     return `
-    <div class="card text-dark my-active-jot">
-      <div class="row">
+    <div class="card text-dark my-active-jot mx-3">
+      <div class="row px-3 me-5">
         <div class="col-8">
           <h1><span style="color: ${this.color}"><i class="mdi mdi-circle"></i></span> ${this.name}</h1>
         </div>
-        <div class="col 4 text-end">
+        <div class="col-4 text-end">
         <button onclick="app.notesController.minimize()" class="btn btn-outline-primary m-2"
           title="Close this Jot"><i class="mdi mdi-minus"></i></button>
         <button onclick="app.notesController.saveNote()" class="btn btn-outline-success m-2" title="Save this Jot"><i class="mdi mdi-content-save"></i></button>
