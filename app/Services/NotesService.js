@@ -21,6 +21,8 @@ class NotesService {
 
   minimize() {
     appState.activeNote = null
+    saveState('active-note', appState.activeNote)
+
   }
 
   saveNote(editedNote) {
