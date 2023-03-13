@@ -56,7 +56,7 @@ export class Note {
         <button onclick="app.notesController.delete()" class="btn btn-outline-danger m-2" title="Delete this Jot"><i class="mdi mdi-delete"></i></button>
         </div>
       </div>
-      <textarea onblur="app.notesController.saveNote()" name="active-jot" id="active-jot" cols="30" rows="22" class="m-2">${this.text}</textarea>
+      <textarea onblur="app.notesController.saveNote()" name="active-jot" id="active-jot" cols="30" rows="22" class="m-2 p-1 px-2">${this.text}</textarea>
       <div class="d-flex justify-content-between">
         <p>Date Created: ${this.ComputeDate}</p>
         <button class="btn btn-info" onclick="app.notesController.darkMode()"><i class="mdi mdi-weather-night"></i></button>
