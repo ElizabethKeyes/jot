@@ -27,6 +27,7 @@ class AppState extends EventEmitter {
 
   noteCount = 0
   activeNoteId = ''
+  darkMode = loadState('dark-mode', Boolean)
 }
 
 

@@ -2,6 +2,7 @@ import { appState } from "../AppState.js";
 import { notesService } from "../Services/NotesService.js";
 import { getFormData } from "../Utils/FormHandler.js";
 import { Pop } from "../Utils/Pop.js";
+import { saveState } from "../Utils/Store.js";
 import { setHTML, setText } from "../Utils/Writer.js";
 
 
@@ -12,8 +13,13 @@ function _drawNotes() {
 }
 
 function _drawActive() {
+  console.log(document.getElementById('active-note'), 'active note before draw function');
   if (appState.activeNote && appState.activeNote.name != undefined) {
-    setHTML('active-note', appState.activeNote.ActiveTemplate)
+    if (appState.darkMode == true) {
+      setHTML('active-note', appState.activeNote.DarkModeTemplate)
+    } else {
+      setHTML('active-note', appState.activeNote.ActiveTemplate)
+    }
   } else {
     setHTML('active-note', `<h1 class="text-center mt-5 pt-5"><i class="mdi mdi-lightbulb"></i>Have an idea? Jot it down!</h1>`)
   }
@@ -72,9 +78,13 @@ export class NotesController {
     if (document.getElementById('active-template').classList.contains("dark-mode")) {
       document.getElementById('active-template').classList.remove("dark-mode")
       document.getElementById('active-template').classList.add("text-dark")
+      appState.darkMode = false
+      saveState('dark-mode', appState.darkMode)
     } else {
       document.getElementById('active-template').classList.remove("text-dark")
       document.getElementById('active-template').classList.add("dark-mode")
+      appState.darkMode = true
+      saveState('dark-mode', appState.darkMode)
     }
   }
 
