@@ -28,7 +28,7 @@ export class Note {
 
   get ListTemplate() {
     return `
-    <div class="row selectable" onclick="app.notesController.setActive('${this.id}')">
+    <div class="row selectable" onclick="app.notesController.setActive('${this.id}')" data-bs-dismiss="offcanvas">
       <div class="col-2">
       <p style="color: ${this.color}"><i class="mdi mdi-circle"></i></p>
       </div>
@@ -75,13 +75,13 @@ export class Note {
           <h1><span style="color: ${this.color}"><i class="mdi mdi-circle"></i></span> ${this.name}</h1>
         </div>
         <div class="col-4 text-end">
-        <button onclick="app.notesController.minimize()" class="btn btn-outline-primary m-2"
+        <button onclick="app.notesController.minimize()" class="btn btn-primary m-2"
           title="Close this Jot"><i class="mdi mdi-minus"></i></button>
-        <button onclick="app.notesController.saveNote()" class="btn btn-outline-success m-2" title="Save this Jot"><i class="mdi mdi-content-save"></i></button>
-        <button onclick="app.notesController.delete()" class="btn btn-outline-danger m-2" title="Delete this Jot"><i class="mdi mdi-delete"></i></button>
+        <button onclick="app.notesController.saveNote()" class="btn btn-success m-2" title="Save this Jot"><i class="mdi mdi-content-save"></i></button>
+        <button onclick="app.notesController.delete()" class="btn btn-danger m-2" title="Delete this Jot"><i class="mdi mdi-delete"></i></button>
         </div>
       </div>
-      <textarea onblur="app.notesController.saveNote()" name="active-jot" id="active-jot" cols="30" rows="22" class="m-2">${this.text}</textarea>
+      <textarea onblur="app.notesController.saveNote()" name="active-jot" id="active-jot" cols="30" rows="22" class="m-2 p-1 px-2">${this.text}</textarea>
       <div class="d-flex justify-content-between">
         <p>Date Created: ${this.ComputeDate}</p>
         <button class="btn btn-info" onclick="app.notesController.darkMode()"><i class="mdi mdi-weather-night"></i></button>

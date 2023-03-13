@@ -5,19 +5,18 @@ import { saveState } from "../Utils/Store.js";
 
 class NotesService {
   createNote(formData) {
-    console.log('creating from the service');
     let newNote = new Note(formData)
     appState.notes.push(newNote)
     appState.emit('notes')
     saveState('notes', appState.notes)
     appState.emit('noteCount')
+    this.setActive(newNote.id)
   }
 
   setActive(noteId) {
     let selectedNote = appState.notes.find(n => n.id == noteId)
     appState.activeNote = selectedNote
     saveState('active-note', selectedNote)
-    console.log(selectedNote);
   }
 
   minimize() {

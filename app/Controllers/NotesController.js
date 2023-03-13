@@ -13,7 +13,6 @@ function _drawNotes() {
 }
 
 function _drawActive() {
-  console.log(document.getElementById('active-note'), 'active note before draw function');
   if (appState.activeNote && appState.activeNote.name != undefined) {
     if (appState.darkMode == true) {
       setHTML('active-note', appState.activeNote.DarkModeTemplate)
@@ -28,13 +27,11 @@ function _drawActive() {
 function _drawNoteCount() {
   let noteCount = appState.notes.length
   setText('note-count', noteCount)
-  console.log('draw note count', noteCount);
 }
 
 
 export class NotesController {
   constructor() {
-    console.log(appState.notes);
     _drawActive()
     _drawNotes()
     _drawNoteCount()
@@ -76,14 +73,12 @@ export class NotesController {
 
   darkMode() {
     if (document.getElementById('active-template').classList.contains("dark-mode")) {
-      document.getElementById('active-template').classList.remove("dark-mode")
-      document.getElementById('active-template').classList.add("text-dark")
       appState.darkMode = false
+      appState.emit('activeNote')
       saveState('dark-mode', appState.darkMode)
     } else {
-      document.getElementById('active-template').classList.remove("text-dark")
-      document.getElementById('active-template').classList.add("dark-mode")
       appState.darkMode = true
+      appState.emit('activeNote')
       saveState('dark-mode', appState.darkMode)
     }
   }
