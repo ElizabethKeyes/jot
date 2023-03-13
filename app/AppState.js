@@ -21,8 +21,12 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/Note').Note|null} */
   activeNote = loadState('active-note', Note) || null
+  // activeNote = null
+
+  // TODO activenote is being assigned a new id on page reload. need to resolve that somehow.
 
   noteCount = 0
+  activeNoteId = ''
 }
 
 

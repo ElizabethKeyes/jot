@@ -25,12 +25,11 @@ class NotesService {
   }
 
   saveNote(editedNote) {
-    let activeNote = appState.activeNote
-    activeNote.text = editedNote
-    let noteInArray = appState.notes.find(n => n.id == activeNote.id)
-    noteInArray.text = activeNote.text
+    let noteInArray = appState.notes.find(n => n.id == appState.activeNote.id)
+    noteInArray.text = editedNote
     noteInArray.savedDate = new Date()
-    appState.emit('activeNote')
+    appState.activeNote = noteInArray
+    saveState('active-note', appState.activeNote)
     saveState('notes', appState.notes)
   }
 
@@ -38,6 +37,7 @@ class NotesService {
     let remainingNotes = appState.notes.filter(n => n.id != appState.activeNote.id)
     appState.notes = remainingNotes
     appState.activeNote = null
+    saveState('active-note', appState.activeNote)
     saveState('notes', appState.notes)
     appState.emit('noteCount')
   }

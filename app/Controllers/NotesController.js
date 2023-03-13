@@ -12,7 +12,7 @@ function _drawNotes() {
 }
 
 function _drawActive() {
-  if (appState.activeNote) {
+  if (appState.activeNote && appState.activeNote.name != undefined) {
     setHTML('active-note', appState.activeNote.ActiveTemplate)
   } else {
     setHTML('active-note', `<h1 class="text-center mt-5 pt-5"><i class="mdi mdi-lightbulb"></i>Have an idea? Jot it down!</h1>`)
@@ -28,7 +28,7 @@ function _drawNoteCount() {
 
 export class NotesController {
   constructor() {
-    console.log('hello from NotesController');
+    console.log(appState.notes);
     _drawActive()
     _drawNotes()
     _drawNoteCount()
@@ -65,6 +65,16 @@ export class NotesController {
     if (await Pop.confirm("Are you sure you'd like to delete this note?")) {
       notesService.delete()
       Pop.toast('Jot has been successfully deleted', "success", "top", 1500)
+    }
+  }
+
+  darkMode() {
+    if (document.getElementById('active-template').classList.contains("dark-mode")) {
+      document.getElementById('active-template').classList.remove("dark-mode")
+      document.getElementById('active-template').classList.add("text-dark")
+    } else {
+      document.getElementById('active-template').classList.remove("text-dark")
+      document.getElementById('active-template').classList.add("dark-mode")
     }
   }
 

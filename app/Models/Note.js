@@ -3,7 +3,7 @@ import { generateId } from "../Utils/generateId.js";
 
 export class Note {
   constructor(data) {
-    this.id = generateId()
+    this.id = data.id || generateId()
     this.name = data.name
     this.color = data.color
     this.creationDate = data.creationDate ? new Date(data.creationDate) : new Date()
@@ -44,7 +44,7 @@ export class Note {
 
   get ActiveTemplate() {
     return `
-    <div class="card text-dark my-active-jot mx-3">
+    <div class="card text-dark my-active-jot mx-3" id="active-template">
       <div class="row px-3 me-5">
         <div class="col-8">
           <h1><span style="color: ${this.color}"><i class="mdi mdi-circle"></i></span> ${this.name}</h1>
@@ -59,6 +59,7 @@ export class Note {
       <textarea onblur="app.notesController.saveNote()" name="active-jot" id="active-jot" cols="30" rows="22" class="m-2">${this.text}</textarea>
       <div class="d-flex justify-content-between">
         <p>Date Created: ${this.ComputeDate}</p>
+        <button class="btn btn-info" onclick="app.notesController.darkMode()"><i class="mdi mdi-weather-night"></i></button>
         <p>Last Save: ${this.ComputeSaveDate}</p>
       </div>
     </div>

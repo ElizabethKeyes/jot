@@ -29,3 +29,16 @@
   position: fixed;
   right: 25px;
 }
+
+.dark-mode {
+  /* background-color: #111927; */
+  background-color: #102d5e;
+  color: #e9ecef;
+  border: solid #2f567c 2px
+}
+
+.dark-mode textarea {
+  background-color: #274373;
+  color: #e9ecef;
+
+}
